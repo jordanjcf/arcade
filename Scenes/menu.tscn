@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://clyhm2p2f6wta"]
+
+[ext_resource type="Script" uid="uid://b48b6yxsmh1te" path="res://Script/menu.gd" id="1_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://bb5jwfsn2vepo" path="res://Assets/Imagenes-menu/fondo-arcade.jpg" id="2_xhh6f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eian2"]
+bg_color = Color(0.13653502, 0.65937895, 0.8216236, 1)
+
+[node name="Menu" type="Control" unique_id=1638795325]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhh6f")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=146533019]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xhh6f")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=758020549]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.625
+offset_top = -146.5
+offset_right = 199.625
+offset_bottom = 146.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 31
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=83543200]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_eian2")
+text = "JUGAR
+"
+
+[node name="Opciones" type="Button" parent="VBoxContainer" unique_id=1614441018]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_eian2")
+text = "OPCIONES"
+
+[node name="Salir" type="Button" parent="VBoxContainer" unique_id=588587863]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_eian2")
+text = "SALIR"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
